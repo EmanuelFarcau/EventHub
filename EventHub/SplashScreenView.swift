@@ -37,8 +37,8 @@ struct SplashScreenView: View {
                     withAnimation{
                         self.isActive = true
                     }
-                        
                 }
+            }
         }
     }
 }
