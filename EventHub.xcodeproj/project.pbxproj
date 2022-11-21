@@ -53,6 +53,7 @@
 		B9B58C5829277A9700873587 /* EventHub */ = {
 			isa = PBXGroup;
 			children = (
+				B9B58C832927BB5400873587 /* Assets */,
 				B9B58C5929277A9700873587 /* EventHubApp.swift */,
 				B9B58C5B29277A9700873587 /* ContentView.swift */,
 				B9B58C8129278FCA00873587 /* SplashScreenView.swift */,
@@ -68,6 +69,21 @@
 				B9B58C6029277A9800873587 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B9B58C832927BB5400873587 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				B9B58C842927BB5A00873587 /* Components */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		B9B58C842927BB5A00873587 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
