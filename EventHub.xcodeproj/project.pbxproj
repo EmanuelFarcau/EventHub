@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B9189DC7292B7E370088228D /* TextInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9189DC6292B7E370088228D /* TextInput.swift */; };
+		B9189DC9292B84230088228D /* PasswordInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9189DC8292B84230088228D /* PasswordInput.swift */; };
+		B9189DCD292B893E0088228D /* PurpleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9189DCC292B893E0088228D /* PurpleButton.swift */; };
 		B9B58C5A29277A9700873587 /* EventHubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B58C5929277A9700873587 /* EventHubApp.swift */; };
 		B9B58C5C29277A9700873587 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B58C5B29277A9700873587 /* ContentView.swift */; };
 		B9B58C5E29277A9800873587 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9B58C5D29277A9800873587 /* Assets.xcassets */; };
@@ -15,6 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B9189DC6292B7E370088228D /* TextInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInput.swift; sourceTree = "<group>"; };
+		B9189DC8292B84230088228D /* PasswordInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInput.swift; sourceTree = "<group>"; };
+		B9189DCC292B893E0088228D /* PurpleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurpleButton.swift; sourceTree = "<group>"; };
 		B9B58C5629277A9700873587 /* EventHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9B58C5929277A9700873587 /* EventHubApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventHubApp.swift; sourceTree = "<group>"; };
 		B9B58C5B29277A9700873587 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -34,6 +40,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B9189DC4292B7D1A0088228D /* Inputs */ = {
+			isa = PBXGroup;
+			children = (
+				B9189DC6292B7E370088228D /* TextInput.swift */,
+				B9189DC8292B84230088228D /* PasswordInput.swift */,
+			);
+			path = Inputs;
+			sourceTree = "<group>";
+		};
+		B9189DC5292B7D390088228D /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		B9189DCA292B86BA0088228D /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				B9189DCC292B893E0088228D /* PurpleButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
 		B9B58C4D29277A9700873587 = {
 			isa = PBXGroup;
 			children = (
@@ -53,6 +83,7 @@
 		B9B58C5829277A9700873587 /* EventHub */ = {
 			isa = PBXGroup;
 			children = (
+				B9189DC5292B7D390088228D /* Screens */,
 				B9B58C832927BB5400873587 /* Assets */,
 				B9B58C5929277A9700873587 /* EventHubApp.swift */,
 				B9B58C5B29277A9700873587 /* ContentView.swift */,
@@ -82,6 +113,8 @@
 		B9B58C842927BB5A00873587 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				B9189DCA292B86BA0088228D /* Buttons */,
+				B9189DC4292B7D1A0088228D /* Inputs */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -158,7 +191,10 @@
 			files = (
 				B9B58C5C29277A9700873587 /* ContentView.swift in Sources */,
 				B9B58C5A29277A9700873587 /* EventHubApp.swift in Sources */,
+				B9189DC9292B84230088228D /* PasswordInput.swift in Sources */,
 				B9B58C8229278FCA00873587 /* SplashScreenView.swift in Sources */,
+				B9189DC7292B7E370088228D /* TextInput.swift in Sources */,
+				B9189DCD292B893E0088228D /* PurpleButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
