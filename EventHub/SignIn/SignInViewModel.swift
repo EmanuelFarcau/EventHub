@@ -9,7 +9,7 @@ import SwiftUI
 
 protocol SignInViewModelProtocol: ObservableObject{
     
-    func onGoToSignUp()
+    func goToSignUp()
     func close()
 }
 
@@ -25,7 +25,7 @@ final class SignInViewModel: SignInViewModelProtocol {
         self.navigation = navigation
     }
     
-    func onGoToSignUp() {
+    func goToSignUp() {
         navigation.onGoToSignUp?()
     }
     

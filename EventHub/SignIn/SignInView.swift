@@ -46,7 +46,7 @@ struct SignInView<ViewModel: SignInViewModelProtocol>: View {
                     Text("Nu ai cont?")
                         .font(.system(size: 16))
                     TextButton(title: "Înregistrează-te"){
-                        self.viewModel.onGoToSignUp()
+                        self.viewModel.goToSignUp()
                     }
                     
                 }
