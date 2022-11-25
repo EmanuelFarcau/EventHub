@@ -12,7 +12,8 @@ protocol SignInNavigationProtocol{
     var onGoToSignUp: (() -> Void)? {get set}
 }
 
-struct SignInNavigation{
+struct SignInNavigation: SignInNavigationProtocol{
+    var onGoToSignUp: (() -> Void)?
+    
     var onClose: (() -> Void)?
-    var onGoSignUp: (() -> Void)?
 }

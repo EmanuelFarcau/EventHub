@@ -8,6 +8,8 @@
 import SwiftUI
 
 protocol SignInViewModelProtocol: ObservableObject{
+    
+    func onGoToSignUp()
     func close()
 }
 
@@ -15,12 +17,16 @@ protocol SignInViewModelProtocol: ObservableObject{
 
 final class SignInViewModel: SignInViewModelProtocol {
   //  @Published var users = [String]()
-    let repository: SignInRepositoryProtocol
-    let navigation: SignInNavigationProtocol
+    private let repository: SignInRepositoryProtocol
+    private let navigation: SignInNavigationProtocol
     
     init(users: [String] = [String](), repository: SignInRepositoryProtocol, navigation: SignInNavigationProtocol) {
         self.repository = repository
         self.navigation = navigation
+    }
+    
+    func onGoToSignUp() {
+        navigation.onGoToSignUp?()
     }
     
     func close() {
