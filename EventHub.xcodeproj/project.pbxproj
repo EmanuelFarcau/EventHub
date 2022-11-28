@@ -19,6 +19,14 @@
 		E55BC7DA292CFFC400117074 /* SignInNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55BC7D9292CFFC400117074 /* SignInNavigation.swift */; };
 		E55BC7DC292D012200117074 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55BC7DB292D012200117074 /* SignInView.swift */; };
 		E55BC7DE292D013700117074 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55BC7DD292D013700117074 /* SignInViewModel.swift */; };
+		E57CEA7A292E10F100AA861D /* PurpleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57CEA79292E10F100AA861D /* PurpleButton.swift */; };
+		E57CEA7E292E11D900AA861D /* TextInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57CEA7D292E11D900AA861D /* TextInput.swift */; };
+		E57CEA82292E2CEC00AA861D /* TextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57CEA81292E2CEC00AA861D /* TextButton.swift */; };
+		E57CEA85292E41DC00AA861D /* SignUpCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57CEA84292E41DC00AA861D /* SignUpCoordinator.swift */; };
+		E57CEA87292E41EF00AA861D /* SignUpRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57CEA86292E41EF00AA861D /* SignUpRepository.swift */; };
+		E57CEA89292E420300AA861D /* SignUpNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57CEA88292E420300AA861D /* SignUpNavigation.swift */; };
+		E57CEA8B292E421700AA861D /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57CEA8A292E421700AA861D /* SignUpViewModel.swift */; };
+		E57CEA8D292E422E00AA861D /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57CEA8C292E422E00AA861D /* SignUpView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +44,14 @@
 		E55BC7D9292CFFC400117074 /* SignInNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInNavigation.swift; sourceTree = "<group>"; };
 		E55BC7DB292D012200117074 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		E55BC7DD292D013700117074 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		E57CEA79292E10F100AA861D /* PurpleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurpleButton.swift; sourceTree = "<group>"; };
+		E57CEA7D292E11D900AA861D /* TextInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInput.swift; sourceTree = "<group>"; };
+		E57CEA81292E2CEC00AA861D /* TextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextButton.swift; sourceTree = "<group>"; };
+		E57CEA84292E41DC00AA861D /* SignUpCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCoordinator.swift; sourceTree = "<group>"; };
+		E57CEA86292E41EF00AA861D /* SignUpRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRepository.swift; sourceTree = "<group>"; };
+		E57CEA88292E420300AA861D /* SignUpNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNavigation.swift; sourceTree = "<group>"; };
+		E57CEA8A292E421700AA861D /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		E57CEA8C292E422E00AA861D /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +84,7 @@
 		E55BC7BC292CECCE00117074 /* EventHub */ = {
 			isa = PBXGroup;
 			children = (
+				E57CEA83292E41B700AA861D /* SignUp */,
 				E57CEA77292E0A5400AA861D /* Assets */,
 				E55BC7D4292CFF4D00117074 /* SignIn */,
 				E55BC7BD292CECCE00117074 /* AppDelegate.swift */,
@@ -97,8 +114,47 @@
 		E57CEA77292E0A5400AA861D /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				E57CEA78292E10D800AA861D /* Components */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		E57CEA78292E10D800AA861D /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E57CEA7C292E11C000AA861D /* Inputs */,
+				E57CEA7B292E119D00AA861D /* Buttons */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		E57CEA7B292E119D00AA861D /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				E57CEA79292E10F100AA861D /* PurpleButton.swift */,
+				E57CEA81292E2CEC00AA861D /* TextButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		E57CEA7C292E11C000AA861D /* Inputs */ = {
+			isa = PBXGroup;
+			children = (
+				E57CEA7D292E11D900AA861D /* TextInput.swift */,
+			);
+			path = Inputs;
+			sourceTree = "<group>";
+		};
+		E57CEA83292E41B700AA861D /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				E57CEA84292E41DC00AA861D /* SignUpCoordinator.swift */,
+				E57CEA86292E41EF00AA861D /* SignUpRepository.swift */,
+				E57CEA88292E420300AA861D /* SignUpNavigation.swift */,
+				E57CEA8A292E421700AA861D /* SignUpViewModel.swift */,
+				E57CEA8C292E422E00AA861D /* SignUpView.swift */,
+			);
+			path = SignUp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,13 +229,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				E55BC7D2292CFC6D00117074 /* AppCoordinator.swift in Sources */,
+				E57CEA8B292E421700AA861D /* SignUpViewModel.swift in Sources */,
+				E57CEA87292E41EF00AA861D /* SignUpRepository.swift in Sources */,
+				E57CEA7E292E11D900AA861D /* TextInput.swift in Sources */,
+				E57CEA82292E2CEC00AA861D /* TextButton.swift in Sources */,
 				E55BC7C2292CECCE00117074 /* ViewController.swift in Sources */,
 				E55BC7BE292CECCE00117074 /* AppDelegate.swift in Sources */,
+				E57CEA89292E420300AA861D /* SignUpNavigation.swift in Sources */,
 				E55BC7C0292CECCE00117074 /* SceneDelegate.swift in Sources */,
 				E55BC7D6292CFF9100117074 /* SignInCoordinator.swift in Sources */,
+				E57CEA85292E41DC00AA861D /* SignUpCoordinator.swift in Sources */,
+				E57CEA7A292E10F100AA861D /* PurpleButton.swift in Sources */,
 				E55BC7DE292D013700117074 /* SignInViewModel.swift in Sources */,
 				E55BC7DA292CFFC400117074 /* SignInNavigation.swift in Sources */,
 				E55BC7DC292D012200117074 /* SignInView.swift in Sources */,
+				E57CEA8D292E422E00AA861D /* SignUpView.swift in Sources */,
 				E55BC7D8292CFFAD00117074 /* SignInRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
