@@ -6,9 +6,12 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct SignUpView<ViewModel: SignUpViewModelProtocol>: View {
     @ObservedObject var viewModel: ViewModel
+    
+    @State var errorMessage: String
   
     var body: some View {
         VStack(alignment: .leading){
@@ -24,9 +27,11 @@ struct SignUpView<ViewModel: SignUpViewModelProtocol>: View {
              
             TextInput("Confirmă parola",isSecured: true ,text: $viewModel.confirmPassword, image: "passwordIcon", errorMessage: viewModel.confirmPwPrompt)
            
-            PurpleButton(title: "CREEAZĂ CONT")
-            //                .opacity(signupVM.isSignUpComplete ? 1 : 0.6)
-            //                .disabled(!signupVM.isSignUpComplete)
+            PurpleButton(title: "CREEAZĂ CONT"){
+                signUp()
+            }
+            .opacity(viewModel.isSignUpComplete ? 1 : 0.6)
+            .disabled(!viewModel.isSignUpComplete)
             Text("SAU")
                 .foregroundColor(Color("appGray"))
                 .font(.system(size: 16).bold())
@@ -39,13 +44,18 @@ struct SignUpView<ViewModel: SignUpViewModelProtocol>: View {
                     self.viewModel.onGoToSignIn()
                 }
             }.frame(width: 366, alignment:.center)
-            
-            
-            
-            
             Spacer()
         }
     }
+    func signUp(){
+        Auth.auth().createUser(withEmail: viewModel.email, password: viewModel.password){ result, error in
+            if error != nil{
+                print(error!.localizedDescription)
+                self.errorMessage = error!.localizedDescription
+            }
+        }
+    }
+    
 }
 
 struct SignUpView_Previews: PreviewProvider {

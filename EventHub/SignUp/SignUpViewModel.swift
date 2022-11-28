@@ -58,7 +58,7 @@ final class SignUpViewModel: SignUpViewModelProtocol {
     var isSignUpComplete: Bool{
         if !passwordMatch() ||
             !isPasswordValid() ||
-            isEmailValid() {
+            !isEmailValid() {
             return false
         }
         return true

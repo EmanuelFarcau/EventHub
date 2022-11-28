@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct SignInView<ViewModel: SignInViewModelProtocol>: View {
     @ObservedObject var viewModel: ViewModel
@@ -34,7 +35,9 @@ struct SignInView<ViewModel: SignInViewModelProtocol>: View {
                    
                     TextInput("Parola",isSecured: true ,text: $password, image: "passwordIcon", errorMessage: "")
                  
-                    PurpleButton(title: "INTRĂ ÎN CONT")
+                    PurpleButton(title: "INTRĂ ÎN CONT"){
+                        login()
+                    }
                 }
                
                     
@@ -53,12 +56,14 @@ struct SignInView<ViewModel: SignInViewModelProtocol>: View {
                 Spacer()
             }
             .padding()
-        
-        
-        
-        
     }
-    
+    func login(){
+        Auth.auth().signIn(withEmail: email, password: password) {result, error in
+            if error != nil {
+                print(error!.localizedDescription)
+            }
+        }
+    }
     
 }
 
