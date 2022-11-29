@@ -11,7 +11,7 @@ import Firebase
 struct SignUpView<ViewModel: SignUpViewModelProtocol>: View {
     @ObservedObject var viewModel: ViewModel
     
-    @State var errorMessage: String
+    //@State var errorMessage: String
   
     var body: some View {
         VStack(alignment: .leading){
@@ -28,10 +28,13 @@ struct SignUpView<ViewModel: SignUpViewModelProtocol>: View {
             TextInput("Confirmă parola",isSecured: true ,text: $viewModel.confirmPassword, image: "passwordIcon", errorMessage: viewModel.confirmPwPrompt)
            
             PurpleButton(title: "CREEAZĂ CONT"){
-                signUp()
+                self.viewModel.signUp()
             }
             .opacity(viewModel.isSignUpComplete ? 1 : 0.6)
             .disabled(!viewModel.isSignUpComplete)
+            .alert(viewModel.errorMessage, isPresented: $viewModel.isError){
+                Button("Ok", role: .cancel){}
+            }
             Text("SAU")
                 .foregroundColor(Color("appGray"))
                 .font(.system(size: 16).bold())
@@ -47,14 +50,11 @@ struct SignUpView<ViewModel: SignUpViewModelProtocol>: View {
             Spacer()
         }
     }
-    func signUp(){
-        Auth.auth().createUser(withEmail: viewModel.email, password: viewModel.password){ result, error in
-            if error != nil{
-                print(error!.localizedDescription)
-                self.errorMessage = error!.localizedDescription
-            }
-        }
-    }
+    
+    
+//    func signUp(){
+//
+//    }
     
 }
 
