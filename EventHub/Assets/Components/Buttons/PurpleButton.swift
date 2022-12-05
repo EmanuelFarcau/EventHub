@@ -9,17 +9,18 @@ import SwiftUI
 
 struct PurpleButton: View {
     @State private var title: String
+    var action:  () -> Void
     
-    
-    init(title: String) {
+    init(title: String, action: @escaping () -> Void) {
         self.title = title
+        self.action = action
     }
     
     var body: some View {
         
 
         Button(action: {
-               //do action
+               action()
         }) {
             Text(title)
                 .bold()
@@ -34,6 +35,8 @@ struct PurpleButton: View {
 
 struct PurpleButton_Previews: PreviewProvider {
     static var previews: some View {
-        PurpleButton(title: "INTRĂ ÎN CONT")
+        PurpleButton(title: "INTRĂ ÎN CONT"){
+            
+        }
     }
 }

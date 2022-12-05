@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 
 protocol SignUpViewModelProtocol: ObservableObject{
@@ -17,16 +18,25 @@ protocol SignUpViewModelProtocol: ObservableObject{
     var confirmPwPrompt: String{get}
     var emailPrompt: String{get}
     var passwordPrompt: String{get}
+    var isError: Bool{get set}
+    var errorMessage: String {get set}
     
+    func signUp()
     func onGoToSignIn()
     func close()
 }
 
 final class SignUpViewModel: SignUpViewModelProtocol {
+    var errorMessage: String = ""
+    
+    @Published var isError: Bool = false
+    
     @Published var username: String = ""
     @Published var email: String = ""
     @Published var password: String = ""
     var confirmPassword: String = ""
+    
+    
     
 
     private let repository: SignUpRepositoryProtocol
@@ -35,6 +45,17 @@ final class SignUpViewModel: SignUpViewModelProtocol {
     init(repository: SignUpRepositoryProtocol, navigation: SignUpNavigationProtocol) {
         self.repository = repository
         self.navigation = navigation
+    }
+    
+    func signUp(){
+        Auth.auth().createUser(withEmail: email, password: password){ result, error in
+            if error != nil{
+                self.isError = true
+                self.errorMessage = error!.localizedDescription
+                print(error!.localizedDescription)
+              //  self.errorMessage = error!.localizedDescription
+            }
+        }
     }
     
     func onGoToSignIn(){
@@ -58,7 +79,7 @@ final class SignUpViewModel: SignUpViewModelProtocol {
     var isSignUpComplete: Bool{
         if !passwordMatch() ||
             !isPasswordValid() ||
-            isEmailValid() {
+            !isEmailValid() {
             return false
         }
         return true

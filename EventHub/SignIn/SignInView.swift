@@ -6,12 +6,12 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct SignInView<ViewModel: SignInViewModelProtocol>: View {
     @ObservedObject var viewModel: ViewModel
     
-    @State private var email = ""
-    @State private var password = ""
+    
   
     
 
@@ -30,11 +30,15 @@ struct SignInView<ViewModel: SignInViewModelProtocol>: View {
                         .frame(width: 366, height: 32, alignment:.topLeading)
                 }
                 VStack{
-                    TextInput("Adresa de e-mail",isSecured: false,text: $email, image: "email", errorMessage: "" )
+                    TextInput("Adresa de e-mail",isSecured: false,text: $viewModel.email, image: "email", errorMessage: "" )
                    
-                    TextInput("Parola",isSecured: true ,text: $password, image: "passwordIcon", errorMessage: "")
+                    TextInput("Parola",isSecured: true ,text: $viewModel.password, image: "passwordIcon", errorMessage: "")
                  
-                    PurpleButton(title: "INTRĂ ÎN CONT")
+                    PurpleButton(title: "INTRĂ ÎN CONT"){
+                        self.viewModel.login()
+                    }.alert(viewModel.errorMessage, isPresented: $viewModel.isError){
+                        Button("Ok", role: .cancel){}
+                    }
                 }
                
                     
@@ -53,10 +57,6 @@ struct SignInView<ViewModel: SignInViewModelProtocol>: View {
                 Spacer()
             }
             .padding()
-        
-        
-        
-        
     }
     
     
