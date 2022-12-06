@@ -8,31 +8,49 @@
 import SwiftUI
 
 struct HomeTopView: View {
-  //  var date: Date
-//    var location: String
-//
-//    init(date: Date, location: String) {
-//        self.date = date
-//        self.location = location
-//    }
-//
-    
+    //  var date: Date
+    //    var location: String
+    //
+    //    init(date: Date, location: String) {
+    //        self.date = date
+    //        self.location = location
+    //    }
+    //
+    @State private var searchText = ""
     
     var body: some View {
         
-
         VStack(alignment: .leading){
             HStack{
                 Text(Date().dayOfWeek()!)
                 Text(Date().displayFormat)
             }.font(.system(size: 13).bold())
-                .foregroundColor(Color("purple20"))
+                .foregroundColor(Color("Purple20"))
+                .padding(.leading)
             HStack{
                 Text("Oradea, România").font(.system(size: 24).bold())
                     .foregroundColor(.white)
+            }.padding(.leading)
+            
+            ZStack{
+                HStack {
+                    Image(systemName: "magnifyingglass")
+                    TextField("Caută evenimente", text: $searchText)
+                        .foregroundColor(Color("Purple20"))
+                }
+                .foregroundColor(.gray)
+                .padding(.leading)
+                
+            }.frame(width:308, height: 40)
+            .background(Color("Purple40"))
+            .cornerRadius(20)
+            .padding(.bottom)
+            
+            HStack{
+                ColoredButton(title: "Astăzi", color: "Green50", width: 90)
+                ColoredButton(title: "Mâine", color: "Orange50", width: 90)
+                ColoredButton(title: "Săptămâna aceasta", color: "Orange80", width: 170)
             }
-            
-            
         }.frame(
             minWidth: 0,
             maxWidth: .infinity,
@@ -41,7 +59,7 @@ struct HomeTopView: View {
         ).background(LinearGradient(gradient: Gradient(colors: [Color("topGradient"), Color("bottomGradient")]), startPoint: .top, endPoint: .bottom)).cornerRadius(35)
     }
     
-  
+
 }
 
 struct HomeTopView_Previews: PreviewProvider {

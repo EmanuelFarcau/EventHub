@@ -22,6 +22,9 @@
 		E50AB5972934DC1E00544D59 /* HomeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50AB5962934DC1E00544D59 /* HomeRepository.swift */; };
 		E50AB5992934DC3100544D59 /* HomeNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50AB5982934DC3100544D59 /* HomeNavigation.swift */; };
 		E50AB59B2934E36E00544D59 /* HomeTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50AB59A2934E36E00544D59 /* HomeTopView.swift */; };
+		E50AB59E293CDF7600544D59 /* ColoredButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50AB59D293CDF7600544D59 /* ColoredButton.swift */; };
+		E50AB5A4293E04DA00544D59 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50AB5A3293E04DA00544D59 /* User.swift */; };
+		E50AB5A6293E3EF400544D59 /* TopEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50AB5A5293E3EF400544D59 /* TopEvent.swift */; };
 		E55BC7BE292CECCE00117074 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55BC7BD292CECCE00117074 /* AppDelegate.swift */; };
 		E55BC7C0292CECCE00117074 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55BC7BF292CECCE00117074 /* SceneDelegate.swift */; };
 		E55BC7C2292CECCE00117074 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55BC7C1292CECCE00117074 /* ViewController.swift */; };
@@ -52,6 +55,9 @@
 		E50AB5962934DC1E00544D59 /* HomeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRepository.swift; sourceTree = "<group>"; };
 		E50AB5982934DC3100544D59 /* HomeNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigation.swift; sourceTree = "<group>"; };
 		E50AB59A2934E36E00544D59 /* HomeTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTopView.swift; sourceTree = "<group>"; };
+		E50AB59D293CDF7600544D59 /* ColoredButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoredButton.swift; sourceTree = "<group>"; };
+		E50AB5A3293E04DA00544D59 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E50AB5A5293E3EF400544D59 /* TopEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopEvent.swift; sourceTree = "<group>"; };
 		E55BC7BA292CECCE00117074 /* EventHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E55BC7BD292CECCE00117074 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E55BC7BF292CECCE00117074 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +111,14 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		E50AB59F293E045000544D59 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E50AB5A3293E04DA00544D59 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		E55BC7B1292CECCE00117074 = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +138,7 @@
 		E55BC7BC292CECCE00117074 /* EventHub */ = {
 			isa = PBXGroup;
 			children = (
+				E50AB59F293E045000544D59 /* Models */,
 				E50AB58F2934CB7B00544D59 /* Home */,
 				E57CEA83292E41B700AA861D /* SignUp */,
 				E57CEA77292E0A5400AA861D /* Assets */,
@@ -167,6 +182,7 @@
 				E57CEA7C292E11C000AA861D /* Inputs */,
 				E57CEA7B292E119D00AA861D /* Buttons */,
 				E50AB59A2934E36E00544D59 /* HomeTopView.swift */,
+				E50AB5A5293E3EF400544D59 /* TopEvent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -176,6 +192,7 @@
 			children = (
 				E57CEA79292E10F100AA861D /* PurpleButton.swift */,
 				E57CEA81292E2CEC00AA861D /* TextButton.swift */,
+				E50AB59D293CDF7600544D59 /* ColoredButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -287,6 +304,7 @@
 				E50AB5932934DC0100544D59 /* HomeViewModel.swift in Sources */,
 				E50AB5972934DC1E00544D59 /* HomeRepository.swift in Sources */,
 				E57CEA8B292E421700AA861D /* SignUpViewModel.swift in Sources */,
+				E50AB5A4293E04DA00544D59 /* User.swift in Sources */,
 				E57CEA87292E41EF00AA861D /* SignUpRepository.swift in Sources */,
 				E50AB59B2934E36E00544D59 /* HomeTopView.swift in Sources */,
 				E50AB57D2934AAC600544D59 /* AppCoordinator.swift in Sources */,
@@ -301,7 +319,9 @@
 				E55BC7D6292CFF9100117074 /* SignInCoordinator.swift in Sources */,
 				E57CEA85292E41DC00AA861D /* SignUpCoordinator.swift in Sources */,
 				E57CEA7A292E10F100AA861D /* PurpleButton.swift in Sources */,
+				E50AB5A6293E3EF400544D59 /* TopEvent.swift in Sources */,
 				E55BC7DE292D013700117074 /* SignInViewModel.swift in Sources */,
+				E50AB59E293CDF7600544D59 /* ColoredButton.swift in Sources */,
 				E55BC7DA292CFFC400117074 /* SignInNavigation.swift in Sources */,
 				E55BC7DC292D012200117074 /* SignInView.swift in Sources */,
 				E50AB5952934DC0F00544D59 /* HomeCoordinator.swift in Sources */,
