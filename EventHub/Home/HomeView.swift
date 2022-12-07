@@ -14,8 +14,13 @@ struct HomeView<ViewModel: HomeViewModelProtocol>: View {
     var body: some View {
         VStack{
             HomeTopView()
-        }
-        Spacer()
+            OrganiseEventButton(){
+                self.viewModel.goToOrganiseEvent()
+            }
+            Spacer()
+                
+        }.ignoresSafeArea()
+        
         
     }
 }

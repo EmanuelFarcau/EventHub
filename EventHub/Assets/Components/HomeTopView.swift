@@ -21,12 +21,14 @@ struct HomeTopView: View {
     var body: some View {
         
         VStack(alignment: .leading){
+            
             HStack{
                 Text(Date().dayOfWeek()!)
                 Text(Date().displayFormat)
             }.font(.system(size: 13).bold())
                 .foregroundColor(Color("Purple20"))
                 .padding(.leading)
+                .padding(.top)
             HStack{
                 Text("Oradea, România").font(.system(size: 24).bold())
                     .foregroundColor(.white)
@@ -55,7 +57,7 @@ struct HomeTopView: View {
             minWidth: 0,
             maxWidth: .infinity,
             minHeight: 0,
-            maxHeight: 232
+            maxHeight: 250
         ).background(LinearGradient(gradient: Gradient(colors: [Color("topGradient"), Color("bottomGradient")]), startPoint: .top, endPoint: .bottom)).cornerRadius(35)
     }
     

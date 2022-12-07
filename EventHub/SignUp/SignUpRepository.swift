@@ -37,6 +37,7 @@ final class SignUpRepository: SignUpRepositoryProtocol{
         Auth.auth().createUser(withEmail: email, password: password){ result, error in
             if let error = error{
                 onResponse(.failure(error))
+                return 
               //  self.errorMessage = error!.localizedDescription
             }
             let userID = result?.user.uid

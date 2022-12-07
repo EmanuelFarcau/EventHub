@@ -9,6 +9,7 @@ import SwiftUI
 
 protocol HomeViewModelProtocol: ObservableObject {
     
+    func goToOrganiseEvent()
     func close()
 }
 
@@ -20,6 +21,10 @@ final class HomeViewModel: HomeViewModelProtocol {
     init(repository: HomeRepositoryProtocol, navigation: HomeNavigationProtocol){
         self.repository = repository
         self.navigation = navigation
+    }
+    
+    func goToOrganiseEvent(){
+        navigation.onGoToOrganiseEvent?()
     }
     
     func close() {
