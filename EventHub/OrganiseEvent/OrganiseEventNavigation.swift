@@ -9,8 +9,12 @@ import Foundation
 
 protocol OrganiseEventNavigationProtocol{
     var onClose: (() -> Void)? {get set}
+    
+    var onGoToHome: (() -> Void)? {get set}
 }
 
 struct OrganiseEventNavigation: OrganiseEventNavigationProtocol{
-        var onClose: (() -> Void)?
+    var onClose: (() -> Void)?
+    
+    var onGoToHome: (() -> Void)?
 }

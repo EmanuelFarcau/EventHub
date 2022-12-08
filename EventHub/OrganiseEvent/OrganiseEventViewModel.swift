@@ -15,6 +15,8 @@ protocol OrganiseEventViewModelProtocol: ObservableObject {
     var numberOfPeople: String {get set}
     var location: String{get set}
     var description: String {get set}
+    
+    func goToHome()
 
 }
 
@@ -43,6 +45,10 @@ final class OrganiseEventViewModel: OrganiseEventViewModelProtocol {
 //    func onlyDigits() -> Bool {
 //        //numberOfPeople
 //    }
+    
+    func goToHome(){
+        navigation.onGoToHome?()
+    }
     
     func createEvent(){
         

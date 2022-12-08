@@ -12,16 +12,77 @@ struct HomeView<ViewModel: HomeViewModelProtocol>: View {
     @ObservedObject var viewModel: ViewModel
     
     var body: some View {
-        VStack{
-            HomeTopView()
-            OrganiseEventButton(){
-                self.viewModel.goToOrganiseEvent()
-            }
-            Spacer()
+        ZStack{
+            Color("BackgroundWhite").ignoresSafeArea()
+            VStack{
+                HomeTopView()
+                    .padding(.bottom)
                 
-        }.ignoresSafeArea()
-        
-        
+                ScrollView(.vertical, showsIndicators: false){
+                    Text("Top 10 evenimente în această săptămână")
+                        .font(.system(size: 16))
+                    
+                    ScrollView(.horizontal, showsIndicators: false){
+                        HStack{
+                            TopEvent()
+                            TopEvent()
+                            TopEvent()
+                            TopEvent()
+                        }
+                    }.padding(.bottom)
+                        .padding(.leading)
+                    
+                    Text("Evenimente populare 🔥")
+                        .font(.system(size: 16))
+                    
+                    ScrollView(.horizontal, showsIndicators: false){
+                        HStack{
+                            EventCard()
+                            EventCard()
+                            EventCard()
+                            EventCard()
+                        }
+                    }.padding(.bottom)
+                        .padding(.leading)
+                    
+                    Text("Evenimente aproape de tine")
+                        .font(.system(size: 16))
+                    
+                    ScrollView(.horizontal, showsIndicators: false){
+                        HStack{
+                            EventCard()
+                            EventCard()
+                            EventCard()
+                            EventCard()
+                        }
+                    }.padding(.bottom)
+                        .padding(.leading)
+                    
+                    Text("Eveniment recomandat 🌟")
+                        .font(.system(size: 16))
+                    
+                    ScrollView(.horizontal, showsIndicators: false){
+                        HStack{
+                            EventCard()
+                            EventCard()
+                            EventCard()
+                            EventCard()
+                        }
+                    }.padding(.bottom)
+                        .padding(.leading)
+                    
+                    
+                    
+                    OrganiseEventButton(){
+                        self.viewModel.goToOrganiseEvent()
+                    }
+                }
+                Spacer()
+                
+            }.ignoresSafeArea()
+            
+            
+        }
     }
 }
 

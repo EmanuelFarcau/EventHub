@@ -18,17 +18,22 @@ struct PhotoPicker: View {
         self._image = image
     }
     
+    //CGImageRef cgref = [image CGImage];
+  //  CIImage *cim = [image CIImage]
+
+    
     var body: some View {
         VStack{
             
+        
             Text("Copertă eveniment")
                 .foregroundColor(Color("Black20"))
-            
             
             if let image {
                 Image(uiImage: image)
                     .resizable()
             }
+
             //Spacer()
             PhotosPicker(
                 selection: $selectedItems,

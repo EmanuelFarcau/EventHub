@@ -18,7 +18,9 @@ struct OrganiseEventView<ViewModel: OrganiseEventViewModelProtocol>: View {
             VStack{
                 
                 HStack{
-                    BackButton()
+                    BackButton(){
+                        self.viewModel.goToHome()
+                    }
                         .padding(.leading)
                     Text("Evenimentul tău")
                         .font(.system(size: 24).bold())

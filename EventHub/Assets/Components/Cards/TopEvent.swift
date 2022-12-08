@@ -9,9 +9,7 @@ import SwiftUI
 
 struct TopEvent: View {
     var body: some View {
-        ZStack{
-            Color("BackgroundWhite").ignoresSafeArea()
-            
+   
             
             VStack(alignment: .leading){
                 
@@ -25,7 +23,7 @@ struct TopEvent: View {
                         Text(String(1))
                             .foregroundColor(Color("Purple50"))
                     }.frame(width: 40, height: 40)
-                        .background(Color(.lightGray))
+                        .background(Color("White85"))
                     .cornerRadius(8)
                     .padding(.bottom, 55)
                     .padding(.leading, 5)
@@ -33,16 +31,19 @@ struct TopEvent: View {
                 }
                     
                 
-                Text("Event title")
+                Text("Vincent Van Gogh: O experiență imersivă")
                     .font(.system(size: 13).bold())
                     .padding(.bottom, 1)
+                    .padding(.leading, 3)
                 
                 HStack{
                     Text("26 OCT")
                         .font(.system(size: 13))
+                    Image("Ellipse49")
                     Text("17:00")
                         .font(.system(size: 13))
-                }
+                }.padding(.leading, 3)
+                    .foregroundColor(Color("Purple50"))
                 
                 
             }.frame(width: 175, height: 189)
@@ -51,7 +52,7 @@ struct TopEvent: View {
                 .cornerRadius(16)
             
         }
-    }
+    
 }
 
 struct TopEvent_Previews: PreviewProvider {

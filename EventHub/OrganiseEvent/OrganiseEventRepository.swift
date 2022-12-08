@@ -29,32 +29,34 @@ final class OrganiseEventRepository: OrganiseEventRepositoryProtocol {
                 
     }
     
-//    func getUsers(){
-//          let db = Firestore.firestore()
-//
-//            db.collection("events").getDocuments{ snapshot, error in
-//                // check for errors
-//
-//
-//
-//                if error == nil {
-//
-//                    if let snapshot = snapshot{
-//
-//                    DispatchQueue.main.async {
-//                            //Get all documents and creat Users
-//
-//                                self.events = snapshot.documents.map { d in
-//
-//                                    return Event(id: d.documentID,
-//                                                username: d["username"] as? String ?? "",
-//                                                email: d["email"] as? String ?? "")
-//                            }
-//                        }
-//                    }
-//                }
-//            }
-//        }
+    func getUsers(){
+          let db = Firestore.firestore()
+
+            db.collection("events").getDocuments{ snapshot, error in
+                // check for errors
+
+                if error == nil {
+
+                    if let snapshot = snapshot{
+
+                    DispatchQueue.main.async {
+                            //Get all documents and creat Users
+
+                                self.events = snapshot.documents.map { d in
+
+                                    return Event(id: d.documentID,
+                                                name: d["name"] as? String ?? "",
+                                                 date: d["date"] as? Date ?? Date(),
+                                                image: d["image"] as? UIImage ?? UIImage(),
+                                                location: d["location"] as? String ?? "",
+                                                description: d["description"] as? String ?? ""
+                                    )
+                            }
+                        }
+                    }
+                }
+            }
+        }
     
     
 }

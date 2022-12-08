@@ -22,6 +22,10 @@ final class OrganiseEventCoordinator{
         
         
         
+        navigation.onGoToHome = { [weak self] in
+            self?.onGoToHome()
+        }
+        
         let viewModel = OrganiseEventViewModel(repository: repository, navigation: navigation)
         let view = OrganiseEventView(viewModel: viewModel)
         let viewController = UIHostingController(rootView: view)
@@ -31,5 +35,8 @@ final class OrganiseEventCoordinator{
     }
     
     
+    func onGoToHome(){
+        navController.popViewController(animated: true)
+    }
     
 }
