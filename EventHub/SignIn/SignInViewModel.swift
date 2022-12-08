@@ -14,6 +14,7 @@ protocol SignInViewModelProtocol: ObservableObject{
     var email: String{get set}
     var password: String{get set}
     
+    func goToHome()
     func login()
     func goToSignUp()
     func close()
@@ -44,8 +45,15 @@ final class SignInViewModel: SignInViewModelProtocol {
                     self.errorMessage = error!.localizedDescription
                     print(error!.localizedDescription)
                 }
+            } else {
+                self.goToHome()
+                print ("ce vrea inima ta")
             }
         }
+    }
+    
+    func goToHome(){
+        navigation.onGoToHome?()
     }
     
     func goToSignUp() {

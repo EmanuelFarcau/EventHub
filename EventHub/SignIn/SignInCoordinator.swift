@@ -11,6 +11,7 @@ import SwiftUI
 final class SignInCoordinator{
     let navController: UINavigationController
     var signUpCoordinator: SignUpCoordinator?
+    var homeCoordinator: HomeCoordinator?
     
     init(navController: UINavigationController) {
         self.navController = navController
@@ -29,6 +30,13 @@ final class SignInCoordinator{
             self?.onGoToSignUp()
         }
         
+        navigation.onGoToHome = { [weak self] in
+            self?.onGoToHome()
+        }
+        
+        
+        
+        
 
         let viewModel = SignInViewModel(repository: repository, navigation: navigation)
         let view = SignInView(viewModel: viewModel)
@@ -39,6 +47,11 @@ final class SignInCoordinator{
         navController.pushViewController(viewController, animated: true)
         
         
+    }
+    
+    func onGoToHome() {
+        homeCoordinator = HomeCoordinator(navController: navController)
+        homeCoordinator?.start()
     }
     
     func onGoToSignUp(){

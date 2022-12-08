@@ -16,11 +16,13 @@ struct SignInView<ViewModel: SignInViewModelProtocol>: View {
     
 
     var body: some View {
+        ZStack{
+            Color("BackgroundWhite").ignoresSafeArea()
             VStack {
                 VStack{
                     Image("imageEventHub")
                         .padding(.bottom, 15)
-                        //.padding(.top, 1)
+                    //.padding(.top, 1)
                         .padding()
                 }
                 
@@ -31,17 +33,17 @@ struct SignInView<ViewModel: SignInViewModelProtocol>: View {
                 }
                 VStack{
                     TextInput("Adresa de e-mail",isSecured: false,text: $viewModel.email, image: "email", errorMessage: "" )
-                   
+                    
                     TextInput("Parola",isSecured: true ,text: $viewModel.password, image: "passwordIcon", errorMessage: "")
-                 
+                    
                     PurpleButton(title: "INTRĂ ÎN CONT"){
                         self.viewModel.login()
                     }.alert(viewModel.errorMessage, isPresented: $viewModel.isError){
                         Button("Ok", role: .cancel){}
                     }
                 }
-               
-                    
+                
+                
                 Text("SAU")
                     .foregroundColor(Color("appGray"))
                     .font(.system(size: 16).bold())
@@ -57,8 +59,8 @@ struct SignInView<ViewModel: SignInViewModelProtocol>: View {
                 Spacer()
             }
             .padding()
+        }
     }
-    
     
 }
 

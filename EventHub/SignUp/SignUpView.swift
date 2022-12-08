@@ -14,21 +14,23 @@ struct SignUpView<ViewModel: SignUpViewModelProtocol>: View {
     //@State var errorMessage: String
   
     var body: some View {
+        ZStack{
+            Color("BackgroundWhite").ignoresSafeArea()
         VStack(alignment: .leading){
             Text("Înregistrează-te")
                 .font(.system(size: 24).bold())
                 .padding()
             
             TextInput("Numele și Prenumele",isSecured: false,text: $viewModel.username,image: "username",errorMessage: "")
-        
+            
             TextInput("Adresa de e-mail", isSecured: false,text: $viewModel.email, image: "email", errorMessage: viewModel.emailPrompt )
             
             TextInput("Parola",isSecured: true ,text: $viewModel.password, image: "passwordIcon", errorMessage: viewModel.passwordPrompt)
-             
+            
             TextInput("Confirmă parola",isSecured: true ,text: $viewModel.confirmPassword, image: "passwordIcon", errorMessage: viewModel.confirmPwPrompt)
-           
+            
             PurpleButton(title: "CREEAZĂ CONT"){
-                self.viewModel.signUp()
+                self.viewModel.createUser()
             }
             .opacity(viewModel.isSignUpComplete ? 1 : 0.6)
             .disabled(!viewModel.isSignUpComplete)
@@ -48,6 +50,7 @@ struct SignUpView<ViewModel: SignUpViewModelProtocol>: View {
                 }
             }.frame(width: 366, alignment:.center)
             Spacer()
+        }
         }
     }
     
