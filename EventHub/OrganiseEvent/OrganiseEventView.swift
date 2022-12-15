@@ -41,10 +41,12 @@ struct OrganiseEventView<ViewModel: OrganiseEventViewModelProtocol>: View {
                 DateInput("Oră eveniment", isTime: true,text: $viewModel.date, image: "clock" )
                     .padding(.bottom, 5)
                 TextInput("Locație eveniment",isSecured: false,text: $viewModel.location, image: "location", errorMessage: "" ).disabled(true)
+                NumberInput(title: "Nr de participanti", text: $viewModel.numberOfParticipants, image: "Ticket", errorMessage: "")
                 DescriptionInput("Descriere eveniment", text: $viewModel.description, image: "description")
                 
-                PurpleButton(title: "CREEAZĂ EVENIMENT"){
-                    //
+                
+                PurpleButton(title: "CREEAZĂ EVENIMENT", icon: ""){
+                    self.viewModel.createEvent()
                 }
                 
                 Spacer()

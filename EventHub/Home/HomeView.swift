@@ -24,6 +24,9 @@ struct HomeView<ViewModel: HomeViewModelProtocol>: View {
                     
                     ScrollView(.horizontal, showsIndicators: false){
                         HStack{
+                            
+                            
+                            
                             TopEvent()
                             TopEvent()
                             TopEvent()
@@ -37,11 +40,8 @@ struct HomeView<ViewModel: HomeViewModelProtocol>: View {
                     
                     ScrollView(.horizontal, showsIndicators: false){
                         HStack{
-                            EventCard()
-                            EventCard()
-                            EventCard()
-                            EventCard()
-                        }
+                            PopularEvents(popularEvents: viewModel.popularEvents)
+                 }
                     }.padding(.bottom)
                         .padding(.leading)
                     
@@ -50,10 +50,7 @@ struct HomeView<ViewModel: HomeViewModelProtocol>: View {
                     
                     ScrollView(.horizontal, showsIndicators: false){
                         HStack{
-                            EventCard()
-                            EventCard()
-                            EventCard()
-                            EventCard()
+                            LocationEvents(locationEvents: viewModel.locationEvents)
                         }
                     }.padding(.bottom)
                         .padding(.leading)
@@ -63,10 +60,9 @@ struct HomeView<ViewModel: HomeViewModelProtocol>: View {
                     
                     ScrollView(.horizontal, showsIndicators: false){
                         HStack{
-                            EventCard()
-                            EventCard()
-                            EventCard()
-                            EventCard()
+                            
+                            RandomEvents(events: viewModel.events)
+                            
                         }
                     }.padding(.bottom)
                         .padding(.leading)

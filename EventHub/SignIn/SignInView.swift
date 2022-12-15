@@ -36,7 +36,7 @@ struct SignInView<ViewModel: SignInViewModelProtocol>: View {
                     
                     TextInput("Parola",isSecured: true ,text: $viewModel.password, image: "passwordIcon", errorMessage: "")
                     
-                    PurpleButton(title: "INTRĂ ÎN CONT"){
+                    PurpleButton(title: "INTRĂ ÎN CONT", icon: ""){
                         self.viewModel.login()
                     }.alert(viewModel.errorMessage, isPresented: $viewModel.isError){
                         Button("Ok", role: .cancel){}

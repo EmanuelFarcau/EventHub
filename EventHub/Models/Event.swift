@@ -7,14 +7,16 @@
 
 import Foundation
 import SwiftUI
+import FirebaseFirestoreSwift
 
-struct Event: Identifiable {
+struct Event: Identifiable, Decodable {
     
-    var id: String
+    @DocumentID var id: String?
     var name: String
     var date: Date
-    var image: UIImage
+    var image: String
     var location: String
+    var numberOfParticipants: String
     var description: String
     
 }

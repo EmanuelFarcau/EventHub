@@ -15,7 +15,7 @@ struct DateInput: View {
     var isTime: Bool
    // var errorMessage: String
     @FocusState var isActive: Bool
-    @State private var currentDate = Date()
+   // @Binding private var currentDate: Date
     
     
     init(_ title: String, isTime: Bool ,text: Binding<Date>,  image: String) {
@@ -35,9 +35,10 @@ struct DateInput: View {
 //                        .offset(y: !isActive && text.isEmpty ? 0 : -25)
 //                        .scaleEffect(!isActive && text.isEmpty ? 1: 0.8, anchor: .leading)
                     if isTime {
-                        DatePicker("", selection: $currentDate, displayedComponents: .hourAndMinute).focused($isActive, equals: true)
+                        DatePicker("", selection: $text, displayedComponents: .hourAndMinute).focused($isActive, equals: true)
                     }else {
-                        DatePicker("", selection: $currentDate, displayedComponents: .date).focused($isActive, equals: true)
+                        DatePicker("", selection: $text, in: Date()..., displayedComponents: .date).focused($isActive, equals: true)
+                            
                     }
                    
                 }

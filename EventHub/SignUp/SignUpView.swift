@@ -29,7 +29,7 @@ struct SignUpView<ViewModel: SignUpViewModelProtocol>: View {
             
             TextInput("Confirmă parola",isSecured: true ,text: $viewModel.confirmPassword, image: "passwordIcon", errorMessage: viewModel.confirmPwPrompt)
             
-            PurpleButton(title: "CREEAZĂ CONT"){
+            PurpleButton(title: "CREEAZĂ CONT", icon: ""){
                 self.viewModel.createUser()
             }
             .opacity(viewModel.isSignUpComplete ? 1 : 0.6)
